@@ -1,8 +1,25 @@
 body {
-    background-color: #303030;
-    font-family: Montserrat, sans-serif;
-    font-style: normal;
+ position: relative;
+ height: 100vh;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  background-image: url(../img/back.jpg), radial-gradient(circle at center, rgba(0,0,0,0.6), rgba(0,0,0,0));
+ 
+ 
+
 }
+ body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(1, 0, 0, 0.8); /* Прозрачный чёрный цвет */
+  z-index: -2;
+  filter: blur(10px); /* Размытие на 5 пикселей */
+} 
+
 .container {
     max-width: 1528px;
     margin: 0 auto;
@@ -125,12 +142,13 @@ line-height: 2.2;
     line-height: 1.6;
     font-family: Montserrat, sans-serif;
     border: none;
-    transition: 200ms linear;
-}
+    transition: transform 0.2s ease-out, 200ms linear;
+ }
 .hero-btn:hover,
 .hero-btn:focus {
-background-color: #000000;
-color: #FFFFFF;
+  transform: translateY(-5px);
+  background-color: #000000;
+  color: #FFFFFF;
 }
 .hero-btn-second {
     margin-left: 21px;
@@ -144,13 +162,14 @@ color: #FFFFFF;
     line-height: 1.6;
     font-family: Montserrat, sans-serif;
     border-color: #07FCED;
-    transition: 200ms linear;
+    transition: transform 0.2s ease-out, 200ms linear;
 }
 .hero-btn-second:hover,
 .hero-btn-second:focus {
     background-color: #07FCED;
     border-color: #000000;
     color: #000000;
+    transform: translateY(-5px);
 }
 .text {
     position: relative;
@@ -168,6 +187,24 @@ height: 55px;
     font-family: Montserrat, sans-serif;
 font-size: 16px;
 line-height: 1.31;
+}
+.hero-img {
+  position: absolute;
+  left: 970px;
+    top: 180px;
+    z-index: 1;
+}
+.hero-title::after {
+  content: '';
+  left: 680px;
+  transform: rotate( -38deg);
+  top: 60px;
+  position: absolute;
+  width: 150px;
+ padding: 75px 40px;
+ border-radius: 70px;
+ background-image: linear-gradient(rgba(7, 252, 237, 1),rgba(220, 198, 3, 0.94));
+
 }
 
 
